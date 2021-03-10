@@ -36,3 +36,20 @@
     width: 100%;
     height: 10vh;
 }
+
+.display_form{
+    height: 300px;
+    border: 1px solid black;
+    margin: 20px;
+    padding: 20px;
+}
+.display_result{
+    height: 300px;
+    display: flex;
+    border: 1px solid black;
+}
+.append_form{
+    border: 1px solid black;
+    margin: 20px;
+    padding: 20px;
+}

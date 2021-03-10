@@ -11,26 +11,60 @@ Index.prototype.document = function(){
 }
 Index.prototype.clickEvent = function(){
     let self = this;
-    let count = 0;
+    let count = 1;
 
-    $(".testButton:eq(0)").unbind().click(function(){
-        if((count) < $(".testInput").length){
-            count++;
-            $(".testInput").addClass("is-disabled");
-            $(".testInput:eq(" + (count-1) + ")").removeClass("is-disabled");
+    $(".display_form .testButton:eq(0)").unbind().click(function(){
+        if($(".display_form .input[type=text]:eq(" + (count - 1) + ")").val() === ""){
+             return false;
+        } else {
+            if(self.checkEvent(count) == false) return false;
+            if(count === $(".display_form .testInput").length - 1){
+                $(".display_form button.testButton:eq(0)").text("submit");
+            } else if(count === $(".display_form .testInput").length){
+                $(".display_form form#testForm1").submit();
+            }
+            if(count < $(".display_form .testInput").length){
+                count++;
+                $(".display_form .testInput").addClass("is-disabled");
+                $(".display_form .testInput:eq(" + (count-1) + ")").removeClass("is-disabled");
+                
+            }
         }
     })
-    $(".testButton:eq(1)").unbind().click(function(){
-        if((count) > 1) {
+    $(".display_form .testButton:eq(1)").unbind().click(function(){
+        if(count > 1) {
             count--;
-            $(".testInput").addClass("is-disabled");
-            $(".testInput:eq(" + (count-1) + ")").removeClass("is-disabled");
+            $(".display_form .testInput").addClass("is-disabled");
+            $(".display_form .testInput:eq(" + (count-1) + ")").removeClass("is-disabled");
+            if(count === ($(".display_form .testInput").length - 1)){
+                $(".display_form button.testButton:eq(0)").text("next");
+            }
         }
     })
 
+    $(".append_form .testButton:eq(0)").unbind().click(function(){
+        $(".append_form #testForm2").load("assets/include/index.html", function(){
+            $(".append_form .testButton:eq(1)").unbind().click(function(){  
+                $("#testForm2").empty();
+            })
+            
+        });
+    })
     
 }
 
 Index.prototype.changeEvent = function(){
 
+}
+
+Index.prototype.checkEvent = function(count){
+    let self = this;
+
+    let bool = true;
+    if($("input:visible").val() == ""){
+        bool = false;
+        $("input:visible").focus();
+    }
+
+    return bool;
 }
