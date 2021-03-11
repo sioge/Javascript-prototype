@@ -21,6 +21,7 @@ Index.prototype.clickEvent = function(){
             if(count === $(".display_form .testInput").length - 1){
                 $(".display_form button.testButton:eq(0)").text("submit");
             } else if(count === $(".display_form .testInput").length){
+                self.submitEvent();
                 $(".display_form form#testForm1").submit();
             }
             if(count < $(".display_form .testInput").length){
@@ -40,6 +41,14 @@ Index.prototype.clickEvent = function(){
                 $(".display_form button.testButton:eq(0)").text("next");
             }
         }
+    })
+    $(".display_form .testButton:eq(2)").unbind().click(function(){
+        
+        $(".display_form #testForm1")[0].reset();
+        $(".display_form .testInput").addClass("is-disabled");
+        $(".display_form .testInput:eq(0)").removeClass("is-disabled");
+        $(".display_form .testButton:eq(0)").text("next");
+        count = 1;
     })
 
     $(".append_form .testButton:eq(0)").unbind().click(function(){
@@ -67,4 +76,15 @@ Index.prototype.checkEvent = function(count){
     }
 
     return bool;
+}
+
+Index.prototype.submitEvent = function(){
+    let self = this;
+
+    $(".display_form form#testForm1").submit(function(e){
+        e.preventDefault();
+
+        console.log("here!");
+    })
+
 }
