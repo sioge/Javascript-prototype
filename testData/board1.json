@@ -1,0 +1,37 @@
+{
+    "board1": {
+        "idx": 0,
+        "id": "boardid1",
+        "subject": "boardSubject1",
+        "contents": "boardContents1",
+        "regdate": "2020-03-15"
+    },
+    "board2": {
+        "idx": 1,
+        "id": "boardid2",
+        "subject": "boardSubject2",
+        "contents": "boardContents2",
+        "regdate": "2020-03-15"
+    },
+    "board3": {
+        "idx": 2,
+        "id": "boardid3",
+        "subject": "boardSubject3",
+        "contents": "boardContents3",
+        "regdate": "2020-03-15"
+    },
+    "board4": {
+        "idx": 3,
+        "id": "boardid4",
+        "subject": "boardSubject4",
+        "contents": "boardContents4",
+        "regdate": "2020-03-15"
+    },
+    "board5": {
+        "idx": 4,
+        "id": "boardid5",
+        "subject": "boardSubject5",
+        "contents": "boardContents5",
+        "regdate": "2020-03-15"
+    }
+}
