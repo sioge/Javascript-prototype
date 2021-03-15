@@ -37,18 +37,15 @@
     height: 10vh;
 }
 
-.display_form{
-    height: 300px;
+.display_form, .append_form{
+    height: 150px;
+    background-color: #dadada;
     border: 1px solid black;
     margin: 20px;
     padding: 20px;
 }
-.display_result{
-    height: 300px;
-    display: flex;
-    border: 1px solid black;
-}
-.append_form{
+.display_result, .append_result {
+    height: 100px;
     border: 1px solid black;
     margin: 20px;
     padding: 20px;
