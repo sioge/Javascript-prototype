@@ -1,19 +1,26 @@
 $.fn.serializeObject = function () {
-    'use strict';
-    var result = {};
-    var extend = function (i, element) {
-      var node = result[element.name];
-      if ('undefined' !== typeof node && node !== null) {
-        if ($.isArray(node)) {
-          node.push(element.value);
-        } else {
-          result[element.name] = [node, element.value];
-        }
+  'use strict';
+  var result = {};
+  var extend = function (i, element) {
+    var node = result[element.name];
+    if ('undefined' !== typeof node && node !== null) {
+      if ($.isArray(node)) {
+        node.push(element.value);
       } else {
-        result[element.name] = element.value;
+        result[element.name] = [node, element.value];
       }
-    };
-  
-    $.each(this.serializeArray(), extend);
-    return result;
+    } else {
+      result[element.name] = element.value;
+    }
   };
+
+  $.each(this.serializeArray(), extend);
+  return result;
+};
+$.fn.pagination = function(page, dataPerPage, total){
+  
+
+  let pageCount = 5;
+  totalPage = Math.ceil(total / dataPerPage);
+  
+}

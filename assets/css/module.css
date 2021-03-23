@@ -1,4 +1,35 @@
 table, th, td {
     border: 1px solid black;
+    border-collapse: collapse;
+}
 
+.card_wrap {
+    background-color: grey;
+    padding: 10px;
+}
+
+.card_section {
+    background-color: rgb(155, 155, 104);
+    display: inline-block;
+    width: 295px;
+    height: 400px;
+    margin: 20px;
+}
+
+.rolling_banner {
+    border: 1px solid black;
+    background-color: #dadada;
+    position: relative;
+    width: 625px;
+    height: 150px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.rolling_banner ul {
+    position: absolute; margin: 5px; padding: 0; list-style: none;
+}
+
+.rolling_banner ul li {
+    float: left; width: 205px; height: 140px;
 }
