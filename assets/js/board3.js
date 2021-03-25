@@ -15,21 +15,33 @@ Board3.prototype.document = function(){
 
 Board3.prototype.createBanner = function(){
     let self = this;
-    
-    $.getJSON('/testData/board1.json', function(data) {
-        let max_count = Object.keys(data).length;
-        $.each(data, function(index, item){
-            $(".rolling_banner ul").append(
-                "<li class='is-disabled'>" +
-                    "<div>" + item.idx + "</div>" +
-                    "<div>" + item.id + "</div>" +
-                    "<div>" + item.subject + "</div>" + 
-                    "<div>" + item.contents + "</div>" +
-                    "<div>" + item.regdate + "</div>" +
-                "</li>"
-            );
-        })
-        self.slideBanner(max_count);
+
+    $.ajax({
+        url: "/testData/board1.json",
+        dataType: "json",
+        data: "",
+        xhrFields: { withCredentials: false },
+        async: false,
+        success: function(res){
+            let max_count = Object.keys(res).length;
+            $.each(res, function(index, item){
+                let html = "";
+                html += "<li class='is-disabled'>";
+                html +=     "<div>" + item.idx + "</div>";
+                html +=     "<div>" + item.id + "</div>";
+                html +=     "<div>" + item.subject + "</div>";
+                html +=     "<div>" + item.contents + "</div>";
+                html +=     "<div>" + item.regdate + "</div>";
+                html += "</div>";
+                
+                $(".rolling_banner ul").append(html);
+            })
+            self.slideBanner(max_count);
+        },
+        error: function(status, error){
+            console.log(status);
+            console.log(error);
+        }
     })
 }
 
@@ -37,7 +49,7 @@ Board3.prototype.slideBanner = function(max_count){
     let self = this;
     
     let count = 1;
-    
+
     $(".rolling_banner ul li:eq(0)").removeClass("is-disabled");
     setInterval(function(){
         $(".rolling_banner ul li").addClass("is-disabled");
@@ -49,7 +61,9 @@ Board3.prototype.slideBanner = function(max_count){
             count = 1;
         }
     }, 3000);
-    
-    
+}
+
+Board.prototype.clickEvent = function (){
+
 
 }

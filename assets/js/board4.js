@@ -16,5 +16,17 @@ Board4.prototype.document = function(){
 Board4.prototype.createTable = function(){
     let self = this;
     
+    $.ajax({
+        url: "/api/list.php",
+        data: "",
+        dataType: "json",
+        async: false,
+        xhrFields: {  widthCredentials: true },
+        success: function(result){
+            console.log(result);
+        },
+        error: function(status, error){
 
-}
+        }
+    })
+} 
