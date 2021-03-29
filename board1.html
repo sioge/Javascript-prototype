@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="/assets/css/module.css" />
     <link rel="stylesheet" href="/assets/css/theme.css" />
     <link rel="stylesheet" href="/assets/css/state.css" />
+    <style>
+        .left,
+        .right {
+            display: inline-block;
+            vertical-align: top;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,20 +21,31 @@
     <div id="container">
         <div id="panel_left"></div>
         <div id="panel_contents">
-            <div>Default board</div>
-            <table>
-                <thead>
-                    <tr>
-                        <td>idx</td>
-                        <td>id</td>
-                        <td>subject</td>
-                        <td>contents</td>
-                        <td>regdate</td>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
+            <div class="left">Default board
+                <table>
+                    <thead>
+                        <tr>
+                            <td>idx</td>
+                            <td>id</td>
+                            <td>subject</td>
+                            <td>contents</td>
+                            <td>regdate</td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="right">
+                default input form
+                <form name="form_test">
+                    <div><input type="text" name="id" value="" placeholder="id" /></div>
+                    <div><input type="text" name="subject" value="" placeholder="subject" /></div>
+                    <div><input type="text" name="contents" value="" placeholder="contents" /></div>
+                </form>
+                <button name="test">test button</button>
+            </div>
         </div>
     </div>
     <div id="footer"></div>
