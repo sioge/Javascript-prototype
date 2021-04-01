@@ -11,6 +11,7 @@ table, th, td {
 .card_section {
     background-color: rgb(155, 155, 104);
     display: inline-block;
+    vertical-align: top;
     width: 295px;
     height: 400px;
     margin: 20px;
@@ -32,4 +33,15 @@ table, th, td {
 
 .rolling_banner ul li {
     float: left; width: 205px; height: 140px;
+}
+
+.input_section{
+    height: 150px;
+    margin-bottom: 200px;
+    text-align: center;
+}
+.submit_btn, .delete_btn {
+    text-align: center;
+    border: 1px solid black;
+    cursor: pointer;
 }
